@@ -15,13 +15,15 @@ def affichage_console(grille):
         Chaque ligne de la grille est affichée sur une ligne différente dans le console.
         Un séparateur est affiché après la grille.
     '''
-    affichage=''
+    affichage=[]
     for ligne in range(6):
+        '''Cette boucle permet de "scanner" toutes les lignes de la grille pour imprimer toutes les lignes une par une.'''
+        l=[]
         for colonne in range(7):
-            affichage=affichage+str(grille[ligne][colonne])
-        affichage=affichage+'\n'
-    affichage=affichage+'\n'+'-------------------------'
-    print (affichage)
+            '''Cette boucle permet de "scanner toutes les colonnes de la grille et les ajoute à la variable l.'''
+            l.append(int(grille[ligne][colonne]))
+        print(f'{l}\n')
+    print('\n-------------------------')
 
 def case_libre_la_plus_basse(grille,num_colonne):
     '''Cette fonction renvoie la case libre la plus basse de la colonne donnée.
