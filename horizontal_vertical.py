@@ -12,71 +12,50 @@
 def alignement_horizontal(grille):
     ''' Cette fonction renvoie True si 4 pions de même couleur sont alignés
         horizontalement. Elle renvoie False sinon.   '''
-    c = 0
     l = 5
-    compt = 0
-    compt1 = 0
-    def ligne():
-        while compt1 < 4 :
-            if grille[l][c] == 0 :
-                compt1 = 5
-                
+    c = 0
+    for ligne in range (6):
+        for colonne in range (4):
             if grille[l][c] == grille[l][c+1] == grille[l][c+2] == grille[l][c+3]:
-                compt1 = 5
-                return True
+                if grille[l][c] == 0 :
+                    None
+                else :
+                    return True
+                    break
             else :
-                compt1 = compt1 + 1
                 c = c + 1
+        l = l - 1
+        c = 0
                 
-                
-    while compt <= 6 :
-        if ligne() == True:
-            compt = 7
-            return True
-        else :
-            compt = compt + 1
-            l = l - 1
-            c = 0
-    
+
+            
     pass     # permet d'exécuter une fonction vide
 
 def alignement_vertical(grille):
     ''' Cette fonction renvoie True si 4 pions de même couleur sont alignés
         verticalement. Elle renvoie False sinon.   '''
-    c = 0
-    l = 0
-    compt = 0
-    compt1 = 0
-    def ligne():
-        while compt1 < 4 :
-            if grille[l][c] == 0 :
-                compt1 = 5
-                
-            if grille[l][c] == grille[l+1][c] == grille[l+2][c] == grille[l+3][c]:
-                compt1 = 5
-                return True
+    lv = 0
+    cv = 0
+    for ligne in range (7):
+        for colonne in range (3):
+            if grille[lv][cv] == grille[lv+1][cv] == grille[lv+2][cv] == grille[lv+3][cv]:
+                if grille[lv][cv] == 0 :
+                    None
+                else :
+                    return True
+                    break
             else :
-                compt1 = compt1 + 1
-                l = l + 1
-                
-                
-    while compt <= 6 :
-        if ligne() == True:
-            compt = 7
-            return True
-        else :
-            compt = compt + 1
-            c = c + 1
-            l = 0
+                lv = lv + 1
+        cv = cv + 1
+        lv = 0
     pass     # permet d'exécuter une fonction vide
 
 def alignement_quadrillage(grille):
     ''' Cette fonction renvoie True si la grille contient un alignement
         horizontal ou vertical de 4 pions de même couleur.
-        Sinon elle renvoie False. '''
+        Sinon elle renvoie False.'''
     
     if alignement_horizontal(grille) or alignement_vertical(grille) == True:
         return True
-    else :
-        return False
+    
     pass     # permet d'exécuter une fonction vide
