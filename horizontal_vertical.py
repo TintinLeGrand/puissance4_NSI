@@ -16,20 +16,16 @@ def alignement_horizontal(grille):
     c = 0
     for ligne in range (6):
         for colonne in range (4):
-            if grille[l][c] == grille[l][c+1] == grille[l][c+2] == grille[l][c+3]:
-                if grille[l][c] == 0 :
+            if grille[l][c] == grille[l][c+1] == grille[l][c+2] == grille[l][c+3]: 
+                if grille[l][c] == 0 :   #Permet d'empécher la victoire en cas de ligne vide
                     None
                 else :
                     return True
                     break
             else :
                 c = c + 1
-        l = l - 1
-        c = 0
-                
-
-            
-    pass     # permet d'exécuter une fonction vide
+        l = l - 1    #Permet de tester la ligne du dessus
+        c = 0    #Réinitialise c
 
 def alignement_vertical(grille):
     ''' Cette fonction renvoie True si 4 pions de même couleur sont alignés
@@ -39,16 +35,15 @@ def alignement_vertical(grille):
     for ligne in range (7):
         for colonne in range (3):
             if grille[lv][cv] == grille[lv+1][cv] == grille[lv+2][cv] == grille[lv+3][cv]:
-                if grille[lv][cv] == 0 :
+                if grille[lv][cv] == 0 :    #Permet d'empécher la victoire en cas de colonne vide
                     None
                 else :
                     return True
                     break
             else :
                 lv = lv + 1
-        cv = cv + 1
-        lv = 0
-    pass     # permet d'exécuter une fonction vide
+        cv = cv + 1    #Permet de tester la colonne suivante
+        lv = 0    #Réinitialise lv
 
 def alignement_quadrillage(grille):
     ''' Cette fonction renvoie True si la grille contient un alignement
@@ -57,5 +52,5 @@ def alignement_quadrillage(grille):
     
     if alignement_horizontal(grille) or alignement_vertical(grille) == True:
         return True
-    
-    pass     # permet d'exécuter une fonction vide
+    else :
+        return False
