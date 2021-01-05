@@ -9,6 +9,7 @@
 # Si vos fonctions sont justes alors le jeu fonctionnera !
 # Bon courage.
 
+#Par Ethan LE NEINDRE
 
 def affichage_console(grille):
     ''' Cette fonction affiche la grille dans la console.
@@ -23,7 +24,7 @@ def affichage_console(grille):
             l.append(int(grille[ligne][colonne]))
             #Cela rajoute tous les éléments de la lignes dans la liste l
         print(f'{l}\n')
-    print('\n-------------------------')
+    print('-------------------------\n')
     #Imprime Un séparateur à la fin de chaque grille.
 
 def case_libre_la_plus_basse(grille,num_colonne):

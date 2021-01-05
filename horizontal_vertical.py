@@ -10,8 +10,7 @@
 # Bon courage.
 
 def alignement_horizontal(grille):
-    ''' Cette fonction renvoie True si 4 pions de même couleur sont alignés
-        horizontalement. Elle renvoie False sinon.   '''
+    ''' Cette fonction renvoie True si 4 pions de même couleur sont alignés horizontalement. Elle renvoie False sinon.'''
     l = 5
     c = 0
     for ligne in range (6):
