@@ -15,16 +15,16 @@ def affichage_console(grille):
     ''' Cette fonction affiche la grille dans la console.
         Chaque ligne de la grille est affichée sur une ligne différente dans le console.
         Un séparateur est affiché après la grille.'''
+    l=[]
+    #l est la liste de tous les jetons d'une ligne. À chaque scan elle est réinisialisée puis imprimer.
     for ligne in range(6):
         #Cette boucle permet de "scanner" toutes les lignes de la grille pour imprimer toutes les lignes une par une.
-        l=[]
-        #l est la liste de tous les jetons d'une ligne. À chaque scan elle est réinisialisée puis imprimer.
         for colonne in range(7):
             #Cette boucle permet de "scanner toutes les colonnes de la grille et les ajoute à la variable l.
-            l.append(int(grille[ligne][colonne]))
+            print(grille[ligne][colonne],' ',end="")
             #Cela rajoute tous les éléments de la lignes dans la liste l
-        print(f'{l}\n')
-    print('-------------------------\n')
+        print('\n')
+    print('-------------------\n')
     #Imprime Un séparateur à la fin de chaque grille.
 
 def case_libre_la_plus_basse(grille,num_colonne):
