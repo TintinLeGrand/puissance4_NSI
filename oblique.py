@@ -31,9 +31,9 @@ def alignement_oblique_montant(grille):
      for ligne in range(6):
         for colonne in range(7):
             if grille[ligne][colonne] == joueur and grille[ligne+1][colonne]== joueur and grille[ligne+2][colonne] == joueur and grille[ligne+3][colonne]== joueur:
-                return True
+                return True #retourne Vrai si la condition est respecté c'est à dire si les quatres pions de la même couleur sont alignés
             else:
-                return False
+                return False  #retourne Faux si la condition n'est pas respecté.
             while grille[0][0] == joueur :
                 grille[0][0] = grille[0][0] +1
                 if (grille[0][0] == joueur) and (grille[1][0]== joueur) and (grille[2][0]== joueur) and (grille[3][0]== joueur) :
@@ -57,9 +57,9 @@ def alignement_oblique_diagonale(grille):
     for i in range(3):
         for j in range(3,7):
             if a[i][j] == 1 and a[i][j] == t[i+1][j-1] and a[i][j] == t[i+2][j-2] and a[i][j] == tab[i+3][j-3]:
-                resultat=1
+                resultat=1 # renvoie le resultat si il ya un aligenement de 4 pions de même couleur
                 if a[i][j] == 2 and a[i][j] == tab[i+1][j-1] and a[i][j] == tab[i+2][j-2] and a[i][j] == tab[i+3][j-3]:
-                    resultat=2
+                    resultat=2 # renvoie le resultat si il ya un aligenement de 4 pions de même couleur
 
     #On vérifie les alignements des diagonales vers le haut
                     for i in range(3):
@@ -68,25 +68,27 @@ def alignement_oblique_diagonale(grille):
                                 resultat=1
                                 if a[i][j] == 1 and a[i][j] == tab[i+1][j+1] and a[i][j] == tab[i+2][j+2] and a[i][j] == tab[i+3][j+3]:
                                     resultat=2
-                                    return resultat
+                                    return resultat #permet de verifier pour savoir si il ya une victoire
                                 
 def alignement_oblique_horizontal(grille):
+    """Cette fonction permet de verifier s'il ya un alignement oblique horizontal ou vertical"""
     resultat=0
     #alignement_oblique_horizontal
     for i in range(6):
         for j in range(4):
             if t[y][x] == 1 and t[x][y] == t[y][x+1] and t[x][y] == t[y][x+2] and t[x][y] == t[y][x+3]:
-                resultat=1
+                resultat=1 # renvoie le resultat si il ya un aligenement de 4 pions de même couleur
                 if t[y][x] == 1 and t[x][y] == t[y][x+1] and t[x][y] == t[y][x+2] and t[x][y] == t[y][x+3]:
-                    resultat=2
+                    resultat=2 # renvoie le resultat si il ya un aligenement de 4 pions de même couleur
 
     #alignement_oblique_horizontal vertical
                     for j in range(7):
                         for i in range(3):
                             if a[i][j] == 1 and a[i][j] == a[i+1][j] and a[i][j] == a[i+2][j]and a[i][j] == a[i+3][j]:
-                                resultat=1
+                                resultat=1 # renvoie le resultat si il ya un aligenement de 4 pions de même couleur
                                 if a[i][j] == 2 and a[i][j] == a[i+1][j] and a[i][j] == a[i+2][j]and a[i][j] == a[i+3][j]:
-                                    resultat=2
+                                    resultat=2 # renvoie le resultat si il ya un aligenement de 4 pions de même couleur
+                                    return resultat #permet de verifier pour savoir si il ya une victoire
                                 
 def victoire_alignement(grille):
     ''' Cette fonction renvoie la vitoire si il y a un alignement oblique de 4 pions de même couleur (que ce soit en descendant ou en montant. Sinon elle renvoie False.'''# permet d'exécuter une fonction vide 
